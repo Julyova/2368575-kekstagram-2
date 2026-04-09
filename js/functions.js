@@ -1,9 +1,16 @@
+/* eslint-disable no-console */
+
 const checkLength = (string = '', maxSymbols = 1) => string.length <= maxSymbols;
+
+console.log(checkLength('проверяемая строка', 20));
+console.log(checkLength('проверяемая строка', 18));
+console.log(checkLength('проверяемая строка', 10));
 
 function comparesStringLength(string, length) {
   return string.length <= length;
 }
 
+console.log(comparesStringLength('тест', 10));
 
 const isPalindrome = (string = '') => {
 
@@ -19,12 +26,15 @@ const isPalindrome = (string = '') => {
 
 };
 
+console.log(isPalindrome('топот'));
+
 const verifyPalindrome = (string) => {
   const normalizedString = string.replaceAll(' ', '').toUpperCase();
   const reverseString = normalizedString.split('').reverse().join('');
   return reverseString === normalizedString;
 };
 
+console.log(verifyPalindrome('довод'));
 
 const extractNumbers = (string) => {
   let result = '';
@@ -40,6 +50,7 @@ const extractNumbers = (string) => {
   return result === '' ? NaN : Number(result);
 };
 
+console.log(extractNumbers('2023 год'));
 
 function stringToNumber(str) {
   return Number(
@@ -47,3 +58,4 @@ function stringToNumber(str) {
   );
 }
 
+console.log(stringToNumber('ECMAScript 2022'));
